@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rpg/shared/styled_button.dart';
 import 'package:flutter_rpg/shared/styled_text.dart';
 
 class Home extends StatefulWidget {
@@ -25,7 +26,8 @@ class _HomeState extends State<Home> {
             ),
             const StyledHeading('Chatacter List'),
             const StyledTitle('Chatacter List'),
-            FilledButton(onPressed: () {}, child: const Text('Create New'))
+            StyledButton(
+                onPressed: () {}, child: const StyledHeading('Create New'))
           ],
         ),
       ),
