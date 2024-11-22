@@ -27,7 +27,9 @@ class _HomeState extends State<Home> {
             const StyledHeading('Chatacter List'),
             const StyledTitle('Chatacter List'),
             StyledButton(
-                onPressed: () {}, child: const StyledHeading('Create New'))
+              onPressed: () {},
+              child: const StyledHeading('Create New'),
+            )
           ],
         ),
       ),
