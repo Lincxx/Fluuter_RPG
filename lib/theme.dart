@@ -49,6 +49,15 @@ ThemeData primaryTheme = ThemeData(
     ),
   ),
 
+  // Card Theme
+  cardTheme: CardTheme(
+    color: AppColors.secondaryColor.withOpacity(0.5),
+    surfaceTintColor: Colors.transparent,
+    shape: const RoundedRectangleBorder(),
+    shadowColor: Colors.transparent,
+    margin: const EdgeInsets.only(bottom: 16),
+  ),
+
   // an other option for text theme copyWith
   //this says to copy all the TextTheme properties from the default theme and override the ones you want
   // textTheme: TextTheme.copyWith(
