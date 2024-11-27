@@ -11,8 +11,9 @@ class Character with Stats {
   bool _isFav = false;
 
   //getters
-  get isFav => _isFav;
+  bool get isFav => _isFav;
 
+  //methods
   void toogleIsFav() {
     _isFav = !_isFav;
   }
