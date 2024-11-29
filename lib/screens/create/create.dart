@@ -1,6 +1,7 @@
 // create screen widget
 
 import 'package:flutter/material.dart';
+import 'package:flutter_rpg/shared/styled_button.dart';
 import 'package:flutter_rpg/shared/styled_text.dart';
 import 'package:flutter_rpg/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,7 +24,21 @@ class _CreateState extends State<Create> {
     _nameController.dispose();
     _sloganController.dispose();
     super.dispose();
-    ;
+  }
+
+  // submit handler
+  void handelSubmit() {
+    if (_nameController.text.trim().isEmpty) {
+      print('name must not be empty');
+      return;
+    }
+    if (_sloganController.text.trim().isEmpty) {
+      print('slogan must not be empty');
+      return;
+    }
+
+    print('name: ${_nameController.text}');
+    print('slogan: ${_sloganController.text}');
   }
 
   @override
@@ -76,6 +91,14 @@ class _CreateState extends State<Create> {
                   ),
                   label: StyledText('Character Slogan')),
             ),
+            const SizedBox(
+              height: 30,
+            ),
+            Center(
+                child: StyledButton(
+              onPressed: handelSubmit,
+              child: const StyledHeading('Create Character'),
+            ))
           ],
         ),
       ),
