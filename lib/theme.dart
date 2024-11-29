@@ -58,6 +58,15 @@ ThemeData primaryTheme = ThemeData(
     margin: const EdgeInsets.only(bottom: 16),
   ),
 
+  // input decoration theme
+  inputDecorationTheme: InputDecorationTheme(
+    filled: true,
+    fillColor: AppColors.secondaryColor.withOpacity(0.5),
+    border: InputBorder.none,
+    labelStyle: const TextStyle(color: AppColors.textColor),
+    prefixIconColor: AppColors.textColor,
+  ),
+
   // an other option for text theme copyWith
   //this says to copy all the TextTheme properties from the default theme and override the ones you want
   // textTheme: TextTheme.copyWith(
