@@ -1,6 +1,8 @@
 // create screen widget
 
 import 'package:flutter/material.dart';
+import 'package:flutter_rpg/models/vocation.dart';
+import 'package:flutter_rpg/screens/create/vocation_card.dart';
 import 'package:flutter_rpg/shared/styled_button.dart';
 import 'package:flutter_rpg/shared/styled_text.dart';
 import 'package:flutter_rpg/theme.dart';
@@ -93,6 +95,32 @@ class _CreateState extends State<Create> {
             ),
             const SizedBox(
               height: 30,
+            ),
+            // Select vocation title
+            const Center(
+              child: Icon(Icons.code, color: AppColors.primaryColor),
+            ),
+            const Center(
+              child: StyledHeading('Choose a Vocation'),
+            ),
+            const Center(
+              child: StyledText('This determines your available skills'),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            // vocation cards
+            const VocationCard(
+              vocation: Vocation.junkie,
+            ),
+            const VocationCard(
+              vocation: Vocation.ninja,
+            ),
+            const VocationCard(
+              vocation: Vocation.raider,
+            ),
+            const VocationCard(
+              vocation: Vocation.wizard,
             ),
             Center(
                 child: StyledButton(
