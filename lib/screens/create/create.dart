@@ -47,11 +47,43 @@ class _CreateState extends State<Create> {
     if (_nameController.text.trim().isEmpty) {
       //print('name must not be empty');
       //show error dialog
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const StyledHeading('Missing Character Name'),
+          content: const StyledText('Please enter a name for your character'),
+          actions: [
+            StyledButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+              },
+              child: const StyledHeading('close'),
+            )
+          ],
+          actionsAlignment: MainAxisAlignment.center,
+        ),
+      );
       return;
     }
     if (_sloganController.text.trim().isEmpty) {
       //print('slogan must not be empty');
       //show error dialog
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const StyledHeading('Missing Slogan'),
+          content: const StyledText('Please enter a slogan for your character'),
+          actions: [
+            StyledButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+              },
+              child: const StyledHeading('close'),
+            )
+          ],
+          actionsAlignment: MainAxisAlignment.center,
+        ),
+      );
       return;
     }
 
