@@ -1,12 +1,16 @@
 // create screen widget
 
 import 'package:flutter/material.dart';
+import 'package:flutter_rpg/models/character.dart';
 import 'package:flutter_rpg/models/vocation.dart';
 import 'package:flutter_rpg/screens/create/vocation_card.dart';
 import 'package:flutter_rpg/shared/styled_button.dart';
 import 'package:flutter_rpg/shared/styled_text.dart';
 import 'package:flutter_rpg/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uuid/uuid.dart';
+
+var uuid = const Uuid();
 
 class Create extends StatefulWidget {
   const Create({super.key});
@@ -40,16 +44,26 @@ class _CreateState extends State<Create> {
   // submit handler
   void handelSubmit() {
     if (_nameController.text.trim().isEmpty) {
-      print('name must not be empty');
+      //print('name must not be empty');
+      //show error dialog
       return;
     }
     if (_sloganController.text.trim().isEmpty) {
-      print('slogan must not be empty');
+      //print('slogan must not be empty');
+      //show error dialog
       return;
     }
 
-    print('name: ${_nameController.text}');
-    print('slogan: ${_sloganController.text}');
+    //create character
+    characters.add(Character(
+      name: _nameController.text.trim(),
+      slogan: _sloganController.text.trim(),
+      vocation: selectedVocation,
+      id: uuid.v4(),
+    ));
+
+    // print('name: ${_nameController.text}');
+    // print('slogan: ${_sloganController.text}');
   }
 
   @override
@@ -142,6 +156,20 @@ class _CreateState extends State<Create> {
                 selected: selectedVocation == Vocation.wizard,
                 onTap: updateVocationSelection,
                 vocation: Vocation.wizard,
+              ),
+
+              // good luck message
+              const Center(
+                child: Icon(Icons.code, color: AppColors.primaryColor),
+              ),
+              const Center(
+                child: StyledHeading('Good Luck'),
+              ),
+              const Center(
+                child: StyledText('And enjoy the journey!'),
+              ),
+              const SizedBox(
+                height: 30,
               ),
 
               // submit button
