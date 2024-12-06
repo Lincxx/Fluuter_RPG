@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-master-class-4766c.firebasestorage.app',
     iosBundleId: 'com.example.flutterRpg',
   );
+
 }
